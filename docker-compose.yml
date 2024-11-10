@@ -1,0 +1,30 @@
+version: '3.9'
+
+services:
+  mongodb:
+    image: mongo:latest
+    container_name: mongodb
+    restart: always
+    ports:
+      - '27017:27017'
+    volumes:
+      - mongodb_data:/data/db
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: admin
+      MONGO_INITDB_ROOT_PASSWORD: password
+
+  redis-stack:
+    image: redis/redis-stack:latest
+    container_name: redis-stack
+    restart: always
+    ports:
+      - '6379:6379'
+      - '8001:8001' # Redis Stack includes a browser UI at this port
+    volumes:
+      - redis_data:/data
+    environment:
+      REDIS_PASSWORD: password
+
+volumes:
+  mongodb_data:
+  redis_data:
