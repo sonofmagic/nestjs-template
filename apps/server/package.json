@@ -1,51 +1,52 @@
 {
-  "name": "@icebreakers/server",
-  "type": "module",
-  "version": "0.0.0",
-  "description": "tsup(esbuild) build package template",
-  "author": "ice breaker <1324318532@qq.com>",
-  "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/sonofmagic/monorepo-template.git",
-    "directory": "packages/bar"
-  },
-  "bugs": {
-    "url": "https://github.com/sonofmagic/monorepo-template/issues"
-  },
-  "keywords": [],
-  "sideEffects": false,
-  "exports": {
-    ".": "./src/index.ts"
-  },
-  "files": [
-    "dist"
-  ],
+  "name": "server",
+  "version": "0.0.1",
+  "private": true,
+  "description": "",
+  "author": "",
+  "license": "UNLICENSED",
   "scripts": {
-    "dev": "tsx watch src/index.ts",
-    "start": "node dist/index.js",
-    "build:watch": "tsup --watch --sourcemap",
-    "build": "tsup",
+    "build": "nest build",
+    "start": "nest start",
+    "start:dev": "nest start --watch",
+    "start:debug": "nest start --debug --watch",
+    "start:prod": "node dist/main",
+    "lint": "eslint \"{src,apps,libs,test}/**/*.ts\" --fix",
     "test": "vitest run",
-    "test:dev": "vitest",
-    "release": "pnpm publish",
-    "lint": "eslint .",
-    "lint:fix": "eslint . --fix"
+    "test:dev": "vitest"
   },
-  "publishConfig": {
-    "exports": {
-      ".": {
-        "types": "./dist/index.d.ts",
-        "import": "./dist/index.js",
-        "require": "./dist/index.cjs"
-      }
-    },
-    "main": "./dist/index.cjs",
-    "module": "./dist/index.js",
-    "types": "./dist/index.d.ts"
+  "dependencies": {
+    "@nestjs/common": "^10.0.0",
+    "@nestjs/core": "^10.0.0",
+    "@nestjs/platform-express": "^10.0.0",
+    "reflect-metadata": "^0.2.0",
+    "rxjs": "^7.8.1"
   },
   "devDependencies": {
-    "@hono/node-server": "^1.13.5",
-    "hono": "^4.6.9"
+    "@nestjs/cli": "^10.0.0",
+    "@nestjs/schematics": "^10.0.0",
+    "@nestjs/testing": "^10.0.0",
+    "@types/express": "^5.0.0",
+    "@types/supertest": "^6.0.2",
+    "source-map-support": "^0.5.21",
+    "supertest": "^7.0.0",
+    "typescript": "^5.1.3"
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "js",
+      "json",
+      "ts"
+    ],
+    "rootDir": "src",
+    "testRegex": ".*\\.spec\\.ts$",
+    "transform": {
+      "^.+\\.(t|j)s$": "ts-jest"
+    },
+    "collectCoverageFrom": [
+      "**/*.(t|j)s"
+    ],
+    "coverageDirectory": "../coverage",
+    "testEnvironment": "node"
   }
 }
