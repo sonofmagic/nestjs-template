@@ -6,7 +6,8 @@
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "baseUrl": "./",
-    "module": "ESNext",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
     "strictBindCallApply": false,
     "strictNullChecks": false,
     "noFallthroughCasesInSwitch": false,
@@ -18,5 +19,9 @@
     "allowSyntheticDefaultImports": true,
     "forceConsistentCasingInFileNames": false,
     "skipLibCheck": true
-  }
+  },
+  "include": [
+    "src",
+    "test"
+  ]
 }
