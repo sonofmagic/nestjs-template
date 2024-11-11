@@ -1,11 +1,13 @@
 {
   "name": "server",
+  "type": "module",
   "version": "0.0.1",
   "private": true,
   "description": "",
   "author": "",
   "license": "UNLICENSED",
   "scripts": {
+    "dev": "tsx watch src/main.ts",
     "build": "nest build",
     "start": "nest start",
     "start:dev": "nest start --watch",
