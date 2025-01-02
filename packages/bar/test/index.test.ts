@@ -1,4 +1,4 @@
-import { bar } from '@/index'
+import { bar } from '../src/index'
 
 describe('index', () => {
   it('foo bar', () => {

@@ -84,6 +84,7 @@
     "typescript": "^5.7.2",
     "unbuild": "^3.2.0",
     "unplugin-swc": "^1.5.1",
+    "vite-tsconfig-paths": "^5.1.4",
     "vitest": "~2.1.8",
     "yaml": "^2.6.1"
   },
