@@ -16,6 +16,7 @@ export default defineProject({
   },
   plugins: [
     // This is required to build the test files with SWC
+    // @ts-ignore
     swc.vite({
       // Explicitly set the module type to avoid inheriting this value from a `.swcrc` config file
       module: { type: 'es6' },

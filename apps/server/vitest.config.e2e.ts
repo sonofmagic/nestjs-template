@@ -7,5 +7,8 @@ export default defineConfig({
     globals: true,
     root: './',
   },
-  plugins: [swc.vite()],
+  plugins: [
+    // @ts-ignore
+    swc.vite(),
+  ],
 })
