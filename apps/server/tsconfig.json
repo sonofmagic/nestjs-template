@@ -8,6 +8,10 @@
     "baseUrl": "./",
     "module": "NodeNext",
     "moduleResolution": "NodeNext",
+    "types": [
+      "multer",
+      "express"
+    ],
     "strictBindCallApply": false,
     "strictNullChecks": false,
     "noFallthroughCasesInSwitch": false,
